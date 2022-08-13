@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
-const test = require(".//router/test");
+const test = require("./router/test");
 
-app.use("/", test);
+app.use("/test", test);
 
 const port = 8080;
 app.listen(port, () => {
