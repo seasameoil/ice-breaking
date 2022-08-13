@@ -12,26 +12,67 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   db.query("SELECT * FROM likes ORDER BY likes DESC", (err, data) => {
-    if (!err) res.send({ products: data });
-    else res.send(err);
+    if (!err) {
+      //db.release();
+      res.send({ products: data });
+    } else res.send(err);
   });
 });
 
-/*app.post("/", (req, res) => {
-  db.query(
-    "INSERT INTO like_list (id, question, likes) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE question=VALUES(question), likes=likes+1",
-    (err, result) => {
-      if (err) {
-        console.log(err);
-        throw err;
-      }
-      console.log(result);
-      res.send(result);
+app.post("/", (req, res) => {
+  var param = req.body.question;
+
+  /*db.query(
+    "INSERT INTO likes (question, likes) VALUES (?, ?)",
+    [param, 1],
+    (err, row, fields) => {
+      if (err) console.log(err);
+      else console.log("inserted~");
     }
   );
-  let find_sql = "SELECT * FROM like_list ORDER BY likes DESC";
-  console.log(req.body.question + " " + req.body.likes);
-  res.send(`${req.body.likes}`);
-});*/
+
+  db.query(
+    "UPDATE likes SET likes = likes+1 WHERE question=?",
+    [param],
+    (err, data) => {
+      if (err) {
+        console.log(err);
+      }
+    }
+  );*/
+  /*db.query(
+      "SELECT count(*) FROM likes WHERE question=?",
+      [param],
+      (err, res) => {
+        if (res != 0) {
+          db.query(
+            "UPDATE likes SET likes = likes+1 WHERE question=?",
+            [param],
+            (err, data) => {
+              if (err) {
+                console.log(err);
+              }
+            }
+          );
+        }
+
+        db.query(
+          "INSERT INTO likes (question, likes) VALUES (?, ?)",
+          [param, 1],
+          (err, row, fields) => {
+            if (err) console.log(err);
+            else console.log("inserted~");
+          }
+        );
+
+        if (err) {
+          console.log(err);
+          throw err;
+        }
+      }
+    );*/
+  console.log(param + " " + req.body.likes);
+  res.send();
+});
 
 module.exports = app;

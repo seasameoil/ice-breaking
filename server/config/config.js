@@ -16,7 +16,7 @@ config.connect((err) => {
     return;
   }
 
-  console.log("connected as id " + config.threadId);
+  console.log("connected~");
 });
 
 module.exports = config;
