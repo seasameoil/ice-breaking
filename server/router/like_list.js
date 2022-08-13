@@ -40,22 +40,21 @@ app.post("/", (req, res) => {
       }
     }
   );*/
-  /*db.query(
-      "SELECT count(*) FROM likes WHERE question=?",
-      [param],
-      (err, res) => {
-        if (res != 0) {
-          db.query(
-            "UPDATE likes SET likes = likes+1 WHERE question=?",
-            [param],
-            (err, data) => {
-              if (err) {
-                console.log(err);
-              }
+  db.query(
+    `SELECT EXISTS(SELECT * FROM likes
+      WHERE question = '${param}') AS dup`,
+    (err, res) => {
+      if (res[0].dup != 0) {
+        db.query(
+          "UPDATE likes SET likes = likes+1 WHERE question=?",
+          [param],
+          (err, data) => {
+            if (err) {
+              console.log(err);
             }
-          );
-        }
-
+          }
+        );
+      } else {
         db.query(
           "INSERT INTO likes (question, likes) VALUES (?, ?)",
           [param, 1],
@@ -64,13 +63,14 @@ app.post("/", (req, res) => {
             else console.log("inserted~");
           }
         );
-
-        if (err) {
-          console.log(err);
-          throw err;
-        }
       }
-    );*/
+
+      if (err) {
+        console.log(err);
+        throw err;
+      }
+    }
+  );
   console.log(param + " " + req.body.likes);
   res.send();
 });
