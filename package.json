@@ -6,6 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@google-cloud/text-to-speech": "^4.0.0",
     "arraylist": "^0.1.0",
     "axios": "^0.27.2",
     "concurrently": "^7.3.0",
