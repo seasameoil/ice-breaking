@@ -1,6 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
 
+import CuteCat from "./components/CuteCat/CuteCat";
+import BackCard from "./components/BackCard/BackCard";
+import PulseButton from "./components/PulseButton/PulseButton";
+
+
 function App() {
   const callApi = async () => {
     axios.get("/api").then((res) => {
@@ -13,22 +18,19 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div class="flip">
+        <div class="card">
+          <div class="front">
+            <CuteCat></CuteCat>
+          </div>
+          <div class="back">
+            <BackCard></BackCard>
+          </div>
+          <PulseButton></PulseButton>
+        </div>
+      </div>
+    </>
   );
 }
 
