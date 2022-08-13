@@ -1,0 +1,29 @@
+{
+  "name": "ice-breaking",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "arraylist": "^0.1.0",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "concurrently": "^7.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "http-proxy-middleware": "^2.0.6",
+    "npm": "^8.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seasameoil/ice-breaking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seasameoil/ice-breaking/issues"
+  },
+  "homepage": "https://github.com/seasameoil/ice-breaking#readme",
+  "description": ""
+}
