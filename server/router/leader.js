@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get("/:usernum", (req, res) => {
     let userNum = parseInt(req.params.usernum);
-    let leaderNum = String(Math.ceil(Math.random() * userNum))
+    let leaderNum = String(Math.floor(Math.random() * userNum) + 1);
     res.send(leaderNum);
 });
 
