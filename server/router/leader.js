@@ -1,10 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/:usernum", (req, res) => {
-    let userNum = parseInt(req.params.usernum);
-    let leaderNum = String(Math.floor(Math.random() * userNum) + 1);
-    res.send(leaderNum);
+router.get("/:userNames", (req, res) => {
+    let userNames = req.params.userNames.split(',');
+    let userNum = userNames.length;
+    let leaderNum = Math.floor(Math.random() * userNum);
+    let leader = userNames[leaderNum];
+    let sendMassage = leader + "님이 조장입니다!";
+    res.send(sendMassage);
 });
 
 module.exports = router;
