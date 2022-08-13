@@ -1,28 +1,24 @@
 import logo from "./logo.svg";
 import "./App.css";
+import CuteCat from "./components/CuteCat/CuteCat";
+import BackCard from "./components/BackCard/BackCard";
+import PulseButton from "./components/PulseButton/PulseButton";
 
 function App() {
   return (
-    <div>
-      <section class="container">
-        <div class="cat">
-          <div class="ears">
-            <p class="ear"></p>
-            <p class="ear"></p>
+    <>
+      <div class="flip">
+        <div class="card">
+          <div class="front">
+            <CuteCat></CuteCat>
           </div>
-          <p class="head">
-            <div class="eyes">
-              <p class="eye"></p>
-              <p class="eye"></p>
-            </div>
-            <p class="nose"></p>
-          </p>
-          <p class="body"></p>
-          <p class="tail"></p>
-          <p class="tail-curl"></p>
+          <div class="back">
+            <BackCard></BackCard>
+          </div>
+          <PulseButton></PulseButton>
         </div>
-      </section>
-    </div>
+      </div>
+    </>
   );
 }
 
