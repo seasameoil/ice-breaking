@@ -13,7 +13,6 @@ app.use(cors());
 app.get("/", (req, res) => {
   db.query("SELECT * FROM likes ORDER BY likes DESC", (err, data) => {
     if (!err) {
-      //db.release();
       res.send({ products: data });
     } else res.send(err);
   });
@@ -22,24 +21,6 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   var param = req.body.question;
 
-  /*db.query(
-    "INSERT INTO likes (question, likes) VALUES (?, ?)",
-    [param, 1],
-    (err, row, fields) => {
-      if (err) console.log(err);
-      else console.log("inserted~");
-    }
-  );
-
-  db.query(
-    "UPDATE likes SET likes = likes+1 WHERE question=?",
-    [param],
-    (err, data) => {
-      if (err) {
-        console.log(err);
-      }
-    }
-  );*/
   db.query(
     `SELECT EXISTS(SELECT * FROM likes
       WHERE question = '${param}') AS dup`,
