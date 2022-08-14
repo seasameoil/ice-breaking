@@ -5,13 +5,14 @@ const test = require(".//router/test");
 const question = require("./router/question_list");
 const place = require("./router/place_list");
 const like = require("./router/like_list");
-
-app.use("/", test);
+const cors = require("cors");
+app.use(cors({ origin: "http://localhost:3000" }));
+app.use("/test", test);
 app.use("/question", question);
 app.use("/place", place);
 app.use("/likes", like);
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

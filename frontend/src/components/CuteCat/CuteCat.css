@@ -13,8 +13,13 @@
     0 100px 80px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
   background: #ede3e4;
+  position: relative;
 }
-
+.CuteCatTT {
+  width: 60px;
+  height: 60px;
+  background-color: red;
+}
 .CuteCatcat {
   position: relative;
 }

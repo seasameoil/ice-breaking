@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  margin: 1.2em 0;
+  font-size: 2em;
+  color: #fbfffe;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 620px;
+  margin-left: 245px;
+  margin-top: 8%;
+  //   margin: 20px auto;
+}
+
+.square {
+  border: 1px solid lightpink;
+  flex: 0 0 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background: #eb73b2;
+
+  &.square:not(:nth-child(3n)) {
+    margin-right: 10px;
+  }
+
+  &.square:not(:nth-child(n + 7)) {
+    margin-bottom: 10px;
+  }
+
+  &.is-active {
+    border: 20px solid gold;
+  }
+}
+
+.square__content {
+  font-size: 2em;
+}
+
+.square__start-btn {
+  background: gold;
+  color: #e97573;
+  font-size: 2em;
+  cursor: pointer;
+
+  &:hover {
+    background: lighten(gold, 25%);
+  }
+}
+
+.LottoInput {
+  padding: 10px;
+  position: absolute;
+  top: 18%;
+  left: 55%;
+  transform: translate3d(46%, -30%, 0);
+}
+
+.register {
+  position: absolute;
+  top: 18%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px 10px;
+  left: 71%;
+  transform: translate3d(46%, -30%, 0);
+}
+
+.delete {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px 10px;
+
+  top: 18%;
+  left: 75%;
+  transform: translate3d(46%, -30%, 0);
+}
+
+.registerWrapper {
+  display: flex;
+}

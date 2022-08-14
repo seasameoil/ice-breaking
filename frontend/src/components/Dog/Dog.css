@@ -1,0 +1,248 @@
+.Dogcontainer {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%),
+    0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%),
+    0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
+  border-radius: 5px;
+  background: #ede3e4;
+}
+.Dogdog {
+  width: 160px;
+  height: 186px;
+  position: relative;
+}
+@keyframes head {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-20deg);
+  }
+  80% {
+    transform: rotate(-20deg);
+  }
+  90% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.Dogdog-head {
+  width: 100px;
+  height: 90px;
+  position: absolute;
+  z-index: 5;
+  top: 30px;
+  left: calc(50% - 50px);
+  background-color: #efc092;
+  border-radius: 50%;
+  animation: head 6s linear infinite;
+}
+.Dogdog-head:before,
+.Dogdog-head:after {
+  content: "";
+  width: 79px;
+  height: 50px;
+  position: absolute;
+  z-index: 5;
+  top: 44px;
+  background-color: #efc092;
+  border-radius: 50%;
+}
+.Dogdog-head:before {
+  left: -7px;
+  transform: rotate(50deg);
+}
+.Dogdog-head:after {
+  right: -7px;
+  transform: rotate(-49deg);
+}
+.Dogdog-mouth {
+  width: 60px;
+  height: 35px;
+  background-color: #fee2d2;
+  position: absolute;
+  bottom: -15px;
+  left: 20px;
+  z-index: 10;
+  border-radius: 50%;
+}
+.Dogdog-mouth:after {
+  content: "";
+  width: 10px;
+  height: 40px;
+  background-color: #fee2d2;
+  position: absolute;
+  bottom: 30px;
+  left: 24px;
+  z-index: 10;
+  border-radius: 20px;
+}
+.Dogdog-nose {
+  width: 16px;
+  height: 10px;
+  position: absolute;
+  top: 8px;
+  left: calc(50% - 8px);
+  background-color: #000;
+  border-radius: 50%;
+}
+@keyframes tongue {
+  0% {
+    height: 10px;
+  }
+  30% {
+    height: 10px;
+  }
+  40% {
+    height: 20px;
+  }
+  60% {
+    height: 10px;
+  }
+  80% {
+    height: 20px;
+  }
+  90% {
+    height: 10px;
+  }
+  100% {
+    height: 10px;
+  }
+}
+.Dogdog-tongue {
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 24px;
+  left: calc(50% - 10px);
+  background-color: #f4a4ad;
+  border-radius: 0 0 10px 10px;
+  animation: tongue 4s linear infinite;
+}
+.Dogdog-eyes {
+  width: 10px;
+  height: 16px;
+  background-color: #000;
+  position: absolute;
+  top: 52px;
+  left: 28px;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 33px 0px 0px #000;
+}
+.Dogdog-eyes:after {
+  content: "";
+  width: 92px;
+  height: 50px;
+  position: absolute;
+  top: -50px;
+  left: -24px;
+  background-color: #efc092;
+  border-radius: 50%;
+}
+.Dogdog-ears {
+  width: 80px;
+  height: 50px;
+  position: absolute;
+  z-index: 0;
+  top: -2px;
+  border-radius: 150px 0 150px 0;
+  background-color: #efc092;
+}
+.Dogdog-ears:after {
+  content: "";
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  z-index: 0;
+  top: 8px;
+  left: 20px;
+  border-radius: 150px 0 150px 0;
+  transform: rotate(-176deg);
+  background-color: #fee2d2;
+}
+.Dogears-left {
+  left: -22px;
+  transform: rotate(-105deg);
+}
+.Dogears-right {
+  right: -22px;
+  transform: rotate(-22deg);
+}
+.Dogdog-body {
+  width: 54px;
+  height: 60px;
+  position: absolute;
+  top: 120px;
+  left: calc(50% - 35px);
+  background-color: #d58b4e;
+  border-radius: 49px 0 0 20px;
+}
+.Dogdog-body:before {
+  content: "";
+  width: 50px;
+  height: 60px;
+  position: absolute;
+  top: 3px;
+  left: calc(50% - 17px);
+  background-color: #efbf8e;
+  border-radius: 100px 100px 0 0;
+}
+.Dogdog-body:after {
+  content: "";
+  width: 15px;
+  height: 30px;
+  position: absolute;
+  top: 32px;
+  left: 28px;
+  background-color: #d58b4e;
+  border-radius: 100px 100px 0 0;
+}
+.Dogdog-foot {
+  width: 20px;
+  height: 13px;
+  position: absolute;
+  z-index: 5;
+  bottom: -3px;
+  left: 8px;
+  background-color: #fce2d3;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 33px 0 0 #fce2d3;
+}
+@keyframes tail {
+  0% {
+    transform: rotate(-47deg);
+  }
+  100% {
+    transform: rotate(-57deg);
+  }
+}
+.Dogdog-tail {
+  width: 10px;
+  height: 50px;
+  position: absolute;
+  top: 120px;
+  left: calc(50% - 45px);
+  background-color: #ecc093;
+  transform: rotate(-47deg);
+  border-radius: 10px 0 0 0px / 50px 0 0 0px;
+  animation: tail 0.08s infinite alternate;
+}
+.Dogball {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  border-radius: 50%;
+  background-color: #6e64f0;
+}

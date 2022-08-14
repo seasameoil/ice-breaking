@@ -1,6 +1,6 @@
 import React from "react";
 import "./CuteCat.css";
-const CuteCat = () => {
+const CuteCat = ({ setActive, isNotHeart, text, active }) => {
   return (
     <div className="CuteCateTest">
       <section class="CuteCatcontainer">

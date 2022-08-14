@@ -8,15 +8,18 @@
   font-family: Pretendard;
 }
 
+.wrapper {
+  position: relative;
+}
 .flip {
-  width: 100vw;
-  height: 100vh;
+  width: 67vw;
+  height: 48vh;
   position: relative;
   perspective: 1100px;
   margin: 2rem;
 }
 
-.card {
+.Appcard {
   width: 100%;
   height: 100%;
   position: relative;
@@ -29,7 +32,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  margin-top: 100px;
+  margin-top: 70px;
   backface-visibility: hidden;
   display: flex;
   justify-content: center;
@@ -47,6 +50,123 @@
   color: black;
 }
 
-.flip:hover .card {
+.flip:hover .Appcard {
   transform: rotateY(180deg);
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.heartContainer {
+  position: absolute;
+  top: 34px;
+  left: 251px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background-color: #c9c9c9;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0 0 0 5px;
+  transform: rotate(-45deg);
+  cursor: pointer;
+}
+
+.heart.fill-color {
+  background-color: #ff2727;
+}
+
+.heart::before {
+  position: absolute;
+  content: "";
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::after {
+  position: absolute;
+  content: "";
+  right: -50%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.animation-heart {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: #ff2727;
+  transform: rotate(-45deg);
+  border-radius: 0 0 0 5px;
+  cursor: pointer;
+  /* animation: popup 0.8s linear; */
+  visibility: hidden;
+}
+
+.animation-heart.animation {
+  animation: popup 0.3s forwards;
+  visibility: visible;
+}
+
+.animation-heart::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: -50%;
+  right: 0;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.animation-heart::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+}
+
+@keyframes popup {
+  50% {
+    transform: scale(1.2) rotate(-45deg);
+  }
+  100% {
+    transform: scale(1) rotate(-45deg);
+
+    /* opacity: 0; */
+  }
+}
+
+.trick {
+  position: absolute;
+  top: 118px;
+  left: 240px;
+  z-index: 10;
+  background-color: transparent;
+  width: 60px;
+  height: 60px;
 }

@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "heroku-prebuild": "cd frontend && yarn install --frozen-lockfile && yarn build && mv build ../server",
+    "start": "cd server && npm ci && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -22,11 +24,15 @@
     "type": "git",
     "url": "git+https://github.com/seasameoil/ice-breaking.git"
   },
+  "engines": {
+    "node": "16"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/seasameoil/ice-breaking/issues"
   },
   "homepage": "https://github.com/seasameoil/ice-breaking#readme",
+  "devDependencies": {},
   "description": ""
 }
